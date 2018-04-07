@@ -44,5 +44,11 @@ Window {
         }
     }
 
+    ProximitySensor{
+        active: true
+        dataRate: 20
+        onReadingChanged: ball.color = (reading.near) ? "black":"green"
+    }
+
     Component.onCompleted: pixelDensity = Screen.logicalPixelDensity
 }
